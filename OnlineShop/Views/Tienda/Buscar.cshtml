@@ -1,0 +1,18 @@
+﻿@model OnlineShop.Models.Categoria
+
+@{
+    ViewBag.Title = "Buscar";
+}
+
+<h2>Buscando Categoria: @Model.Name</h2>
+
+<ul>
+    @foreach (var item in Model.Items)
+    {
+        <li>
+            @Html.ActionLink(item.Titulo, "Detalles", new { id=item.ItemId})
+        </li>
+
+    }
+
+</ul>
