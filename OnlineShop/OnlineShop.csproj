@@ -171,6 +171,10 @@
     <Compile Include="Migrations\201707050422049_noseqpasaperopediamigracion.Designer.cs">
       <DependentUpon>201707050422049_noseqpasaperopediamigracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707171753498_cambionombredecategoria.cs" />
+    <Compile Include="Migrations\201707171753498_cambionombredecategoria.Designer.cs">
+      <DependentUpon>201707171753498_cambionombredecategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\CarritoCompras.cs" />
@@ -262,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707050422049_noseqpasaperopediamigracion.resx">
       <DependentUpon>201707050422049_noseqpasaperopediamigracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707171753498_cambionombredecategoria.resx">
+      <DependentUpon>201707171753498_cambionombredecategoria.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -23,7 +23,7 @@ namespace OnlineShop.Controllers
         public ActionResult Buscar (string Categoria)
         {
             var Category = tiendaDB.Categoria.Include("Items")
-                .Single(c => c.Name == Categoria);
+                .Single(c => c.Nombre == Categoria);
             return View(Category);
         }
 

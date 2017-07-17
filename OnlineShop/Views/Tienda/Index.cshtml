@@ -14,7 +14,7 @@
 <ul>
     @foreach (var Categoria in Model)
     {
-        <li>@Html.ActionLink(Categoria.Name,"Buscar",new { categoria = Categoria.Name })</li>
+        <li>@Html.ActionLink(Categoria.Nombre,"Buscar",new { categoria = Categoria.Nombre })</li>
     }
 
 </ul>
