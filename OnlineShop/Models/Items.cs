@@ -31,6 +31,7 @@ namespace OnlineShop.Models
         public string ItemArtUrl { get; set; }
 
         public virtual Categoria Categoria { get; set; }
-        public virtual Productor Procductor { get; set; }
+        public virtual Productor Productor { get; set; }
+        public virtual List<DetalleOrden> OrdenDetalle { get; set; }
     }
 }

@@ -51,10 +51,28 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -149,8 +167,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministracionTiendaController.cs" />
     <Compile Include="Controllers\CarritoComprasController.cs" />
-    <Compile Include="Controllers\CarritoController.cs" />
+    <Compile Include="Controllers\CheckOutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RevisionController.cs" />
     <Compile Include="Controllers\TiendaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -174,6 +193,22 @@
     <Compile Include="Migrations\201707171753498_cambionombredecategoria.cs" />
     <Compile Include="Migrations\201707171753498_cambionombredecategoria.Designer.cs">
       <DependentUpon>201707171753498_cambionombredecategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707180831473_renameproductor.cs" />
+    <Compile Include="Migrations\201707180831473_renameproductor.Designer.cs">
+      <DependentUpon>201707180831473_renameproductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707180840412_viewmodelid.cs" />
+    <Compile Include="Migrations\201707180840412_viewmodelid.Designer.cs">
+      <DependentUpon>201707180840412_viewmodelid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707251837090_iteminindex.cs" />
+    <Compile Include="Migrations\201707251837090_iteminindex.Designer.cs">
+      <DependentUpon>201707251837090_iteminindex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707252152233_OrdenReajustar.cs" />
+    <Compile Include="Migrations\201707252152233_OrdenReajustar.Designer.cs">
+      <DependentUpon>201707252152233_OrdenReajustar.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Carrito.cs" />
@@ -232,12 +267,15 @@
     <Content Include="Views\AdministracionTienda\Edit.cshtml" />
     <Content Include="Views\AdministracionTienda\Index.cshtml" />
     <Content Include="Views\CarritoCompras\Index.cshtml" />
+    <Content Include="Views\Revision\AddressAndPayment.cshtml" />
+    <Content Include="Views\Revision\Complete.cshtml" />
+    <Content Include="Views\Tienda\MenuCategoria.cshtml" />
+    <Content Include="Views\CarritoCompras\CartSummary.cshtml" />
+    <Content Include="Views\CheckOut\AddressAndPayment.cshtml" />
+    <Content Include="Views\CheckOut\Complete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Carrito\" />
-    <Folder Include="Views\Cuenta\" />
-    <Folder Include="Views\Manager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -269,6 +307,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707171753498_cambionombredecategoria.resx">
       <DependentUpon>201707171753498_cambionombredecategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707180831473_renameproductor.resx">
+      <DependentUpon>201707180831473_renameproductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707180840412_viewmodelid.resx">
+      <DependentUpon>201707180840412_viewmodelid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707251837090_iteminindex.resx">
+      <DependentUpon>201707251837090_iteminindex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707252152233_OrdenReajustar.resx">
+      <DependentUpon>201707252152233_OrdenReajustar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

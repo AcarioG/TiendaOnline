@@ -11,9 +11,8 @@ namespace OnlineShop.ViewModels
     
     public class CarritoComprasModel
     {
-        
+        public int ID { get; set; }
         public List<Carrito> ItemCarrito { get; set; }
-        [Key]
         public decimal CarritoTotal { get; set; }
     }
 }

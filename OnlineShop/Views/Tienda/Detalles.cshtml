@@ -1,15 +1,12 @@
 ﻿@model OnlineShop.Models.Items
 
 @{
-    ViewBag.Titulo = "Item - " + Model.Titulo;
+    ViewBag.Title = "Item-" + Model.Titulo;
 }
 
 <h2>Item:@Model.Titulo</h2>
 
-<p>
-    <img alt="@Model.Titulo"
-         src="@Model.ItemArtUrl" />
-</p>
+
 <div id="album-details">
     <p>
         <em>Categoria:</em>
@@ -17,15 +14,16 @@
     </p>
     <p>
         <em>Proveedor:</em>
-        @Model.Procductor.Name
+        @Model.Productor.Name
     </p>
     <p>
-        <em>Prcio:</em>
+        <em>Precio:</em>
         @String.Format("{0:F}",
         Model.Precio)
     </p>
+
     <p class="button">
-        @Html.ActionLink("Agregar al Carrito", "AddToCart",
+        @Html.ActionLink("Add To Cart", "AddToCart",
         "CarritoCompras", new { id = Model.ItemId }, "")
     </p>
 </div>

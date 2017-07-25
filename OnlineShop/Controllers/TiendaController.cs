@@ -16,11 +16,18 @@ namespace OnlineShop.Controllers
         public ActionResult Index()
         {
             var categoria = tiendaDB.Categoria.ToList();
-            
+
             return View(categoria);
         }
 
-        public ActionResult Buscar (string Categoria)
+        [ChildActionOnly]
+        public ActionResult MenuCategoria ()
+        {
+            var categoria = tiendaDB.Categoria.ToList();
+            return PartialView(categoria);
+        }
+
+        public ActionResult Buscar(string Categoria)
         {
             var Category = tiendaDB.Categoria.Include("Items")
                 .Single(c => c.Nombre == Categoria);
@@ -30,7 +37,8 @@ namespace OnlineShop.Controllers
         // GET: Items/Details/5
         public ActionResult Detalles(int id)
         {
-            var item = new Items { Titulo = "item" + id };
+              var item = tiendaDB.Items.Include("Categoria").Where(x => x.ItemId == id).FirstOrDefault();
+         //   var item = new Items { Titulo = "item" + id, Categoria = new Categoria(), Productor = new Productor() };
             return View(item);
         }
 

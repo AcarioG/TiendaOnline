@@ -29,12 +29,11 @@ namespace OnlineShop.Controllers
                 return View(viewModel);
             }
 
-        public ActionResult AgregarCarrito(int id)
+        public ActionResult AddToCart(int id)
         {
 
             var addedItem = storeDB.Items
                 .Single(item => item.ItemId == id);
-
 
             var carrito = CarritoCompras.GetCart(this.HttpContext);
 

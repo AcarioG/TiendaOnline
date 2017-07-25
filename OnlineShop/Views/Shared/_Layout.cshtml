@@ -21,20 +21,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("aqui va categoria", "Index", "Home")</li>
-                    <li>@Html.ActionLink("aqui va el manejo de tienda", "About", "Home")</li>
-                    <li>@Html.ActionLink("aqui va el carrito", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Tienda", "Index", "Tienda")</li>
                     <li>@Html.ActionLink("Administracion de Tienda", "Index", "AdministracionTienda")</li>
+                   <!-- <li>@{Html.RenderAction("CartSummary", "CarritoCompras");}</li>-->
                 </ul>
             </div>
+
         </div>
+
     </div>
+    <!-- <li>@{Html.RenderAction("MenuCategoria", "Tienda");}</li> -->
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - WVPrestamos</p>
         </footer>
     </div>
 

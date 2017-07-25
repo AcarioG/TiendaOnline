@@ -18,7 +18,7 @@ namespace OnlineShop.Controllers
         // GET: AdministracionTienda
         public ActionResult Index()
         {
-            var items = db.Items.Include(i => i.Categoria).Include(i => i.Procductor);
+            var items = db.Items.Include(i => i.Categoria).Include(i => i.Productor);
             return View(items.ToList());
         }
 
@@ -40,14 +40,11 @@ namespace OnlineShop.Controllers
         // GET: AdministracionTienda/Create
         public ActionResult Create()
         {
-            ViewBag.CategoriaId = new SelectList(db.Categoria, "CategoriaID", "Name");
+            ViewBag.CategoriaId = new SelectList(db.Categoria, "CategoriaID", "Nombre");
             ViewBag.ProductorId = new SelectList(db.Productor, "ProductorId", "Name");
             return View();
         }
 
-        // POST: AdministracionTienda/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ItemId,CategoriaId,ProductorId,Titulo,Precio,ItemArtUrl")] Items items)
@@ -59,7 +56,7 @@ namespace OnlineShop.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoriaId = new SelectList(db.Categoria, "CategoriaID", "Name", items.CategoriaId);
+            ViewBag.CategoriaId = new SelectList(db.Categoria, "CategoriaID", "Nombre", items.CategoriaId);
             ViewBag.ProductorId = new SelectList(db.Productor, "ProductorId", "Name", items.ProductorId);
             return View(items);
         }
@@ -76,14 +73,11 @@ namespace OnlineShop.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoriaId = new SelectList(db.Categoria, "CategoriaID", "Name", items.CategoriaId);
+            ViewBag.CategoriaId = new SelectList(db.Categoria, "CategoriaID", "Nombre", items.CategoriaId);
             ViewBag.ProductorId = new SelectList(db.Productor, "ProductorId", "Name", items.ProductorId);
             return View(items);
         }
 
-        // POST: AdministracionTienda/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ItemId,CategoriaId,ProductorId,Titulo,Precio,ItemArtUrl")] Items items)
@@ -94,7 +88,7 @@ namespace OnlineShop.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoriaId = new SelectList(db.Categoria, "CategoriaID", "Name", items.CategoriaId);
+            ViewBag.CategoriaId = new SelectList(db.Categoria, "CategoriaID", "Nombre", items.CategoriaId);
             ViewBag.ProductorId = new SelectList(db.Productor, "ProductorId", "Name", items.ProductorId);
             return View(items);
         }

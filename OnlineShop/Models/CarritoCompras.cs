@@ -101,7 +101,7 @@ namespace OnlineShop.Models
 
             int? count = (from ItemCarrito in storeDB.Carrito
                           where ItemCarrito.CarritoId == CarritoCompraId
-                          select ItemCarrito.Count).Sum();
+                          select (int?) ItemCarrito.Count).Sum();
 
             return count ?? 0;
         }
