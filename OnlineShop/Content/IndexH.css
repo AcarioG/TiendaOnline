@@ -1,0 +1,45 @@
+﻿body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.jumbotron {
+    display: flex;
+    align-items: center;
+    background-image: url('http://bsnscb.com/data/out/7/39232291-animus-wallpapers.png');
+    background-size: cover;
+    color: #ffffff;
+    height: 500px;
+    text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+
+    .jumbotron h2 {
+        font-size: 60px;
+        font-weight: 700;
+        margin: 0;
+        color: #fff;
+    }
+
+    .jumbotron h3 {
+        margin: 0 0 30px;
+        color: #fff;
+    }
+
+section .row img {
+    margin: 0  0 20px;
+    width: 75%;
+}
+
+.col-md-6 {
+    margin: 0 0 30px;
+}
+
+.col-md-4 {
+    margin: 0 0 30px;
+}
+
+section .row2 img {
+    margin: 0 0 20px;
+    width: 55%;
+}
+

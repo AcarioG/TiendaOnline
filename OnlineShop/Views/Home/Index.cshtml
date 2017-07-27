@@ -2,7 +2,66 @@
     ViewBag.Title = "Home Page";
 }
 
+@{ ViewBag.Title = "Tienda Online";}
+
+<link rel="stylesheet" type="text/css" href="~/Content/IndexH.css" />
+<section class="jumbotron">
+    <div class="container">
+        <div class="row text-center">
+            <h2>MasterShift</h2>
+            <h3>La Tienda del Futuro</h3>
+        </div>
+     </div>
+    </section>
+
+<section class="container">
+    <div class="row">
+        
+        <div class="col-sm-6">
+            <p>Memorias RAM</p>
+            <a href="/Tienda/Buscar?categoria=RAM"><img src="~/Content/Images/ddr4 8gb.jpg"></a>
+        </div>
+        <div class="col-sm-6">
+            <p>Teclados</p>
+            <a href="/Tienda/Buscar?categoria=Teclado"><img src="~/Content/Images/teclado gamer.jpg"></a>
+        </div>
+            </div>
+        <div class="row2">
+        <div class="col-sm-6">
+            <p>Mouse</p>
+            <a href="/Tienda/Buscar?categoria=Mouse"><img src="~/Content/Images/mouse gamer.jpg"></a>
+        </div>
+        <div class="col-sm-6">
+            <p>Tarjetas de Video</p>
+            <a href="/Tienda/Buscar?categoria=Tarjeta%20de%20Video"><img src="~/Content/Images/gtx 1080.jpg"></a>
+        </div>
+            </div>
+    </section>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!--   <ul id="item-list">
+        @foreach (var item in Model)
+            {
+            <li>
+                <a href="@Url.Action("Detalles", "Tienda", new {id = item.ItemId })">
+                    <img alt="item.Titulo" src="@item.ItemArtUrl" width="200" ; height="300" />
+                    <span>@item.Titulo</span>
+                </a>
+            </li>
+        }
+    </ul>  -->
 

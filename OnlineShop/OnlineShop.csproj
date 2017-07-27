@@ -226,6 +226,13 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\001_5008403_l.jpg" />
+    <Content Include="Content\Images\81er60GziAL._SY550_.jpg" />
+    <Content Include="Content\Images\ddr4 8gb.jpg" />
+    <Content Include="Content\Images\gtx 1080.jpg" />
+    <Content Include="Content\Images\mouse gamer.jpg" />
+    <Content Include="Content\Images\teclado gamer.jpg" />
+    <Content Include="Content\IndexH.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
