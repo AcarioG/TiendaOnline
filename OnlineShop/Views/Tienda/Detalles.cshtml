@@ -4,7 +4,7 @@
     ViewBag.Title = "Item-" + Model.Titulo;
 }
 
-<h2>Item:@Model.Titulo</h2>
+<h2>Articulo - @Model.Titulo</h2>
 
 
 <div id="album-details">
@@ -25,7 +25,7 @@
         Model.Precio)
     </p>
 
-    <p class="button">
+    <p class="btn btn-default">
         @Html.ActionLink("Add To Cart", "AddToCart",
         "CarritoCompras", new { id = Model.ItemId }, "")
     </p>
