@@ -28,14 +28,17 @@
                     <ul class="dropdown-menu" role="menu">
                        
                         <li><a href="/Tienda/Buscar?categoria=Disco%20Duro">Disco Duro</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li> 
+                        <li><a href="/Tienda/Buscar?categoria=RAM">Memoria RAM</a></li>    
+                        <li><a href="/Tienda/Buscar?categoria=Tarjeta%20de%20Video">Tarjeta de Video</a></li>                        
+                        <li><a href="/Tienda/Buscar?categoria=Mouse">Mouse</a></li> 
+                        <li><a href="/Tienda/Buscar?categoria=Teclado">Teclado</a></li>
+                        <li><a href="/Tienda/Buscar?categoria=MotherBoard">MotherBoards</a></li>
+                        <li><a href="/Tienda/Buscar?categoria=Laptops">Laptops</a></li>
+                        <li><a href="/Tienda/Buscar?categoria=Otros">Otros</a></li>
+
                     </ul>
              </li>
-                <li>@Html.ActionLink("Tienda", "Index", "Tienda")</li>
+               
                 <li>@Html.ActionLink("Administracion de Tienda", "Index", "AdministracionTienda")</li>
                 <li>@{Html.RenderAction("CartSummary", "CarritoCompras");}</li>                
             </ul>

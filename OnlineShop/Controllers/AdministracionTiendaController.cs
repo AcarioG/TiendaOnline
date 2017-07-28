@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using OnlineShop.Models;
 using OnlineShop.Shop;
+using System.IO;
 
 namespace OnlineShop.Controllers
 {
@@ -37,6 +38,18 @@ namespace OnlineShop.Controllers
             return View(items);
         }
 
+ /*       public ActionResult CargarImagen (HttpPostedFile ItemArtUrl)
+        {
+            if (ItemArtUrl != null && ItemArtUrl.ContentLength > 0)
+            {
+                var image = Path.GetFileName(ItemArtUrl.FileName);
+                var path = Path.Combine(Server.MapPath("~/Content/Images"), image);
+                ItemArtUrl.SaveAs(path);
+
+            }
+            return RedirectToAction("Create");
+        }
+*/
         // GET: AdministracionTienda/Create
         public ActionResult Create()
         {
